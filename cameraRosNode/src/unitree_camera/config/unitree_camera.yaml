@@ -1,0 +1,20 @@
+image_width: 928
+image_height: 800
+camera_name: unitree_camera
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [2580.0868051856605, 0.0, 1347.4193338392204, 0.0, 2581.2289148329596, 1034.4539881461978, 0.0, 0.0, 1.0]
+distortion_model: narrow_stereo
+distortion_coefficients:
+  rows: 1
+  cols: 5
+  data: [-0.0850522996852782, 0.18483663877205245, -0.0008254170617288337, 0.0028799372589857638, 0.0]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1, 0, 0, 0, 1, 0, 0, 0, 1]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [2572.388916015625, 0.0, 1352.2652257760637, 0.0, 0.0, 2575.5068359375, 1032.8075442280096, 0.0, 0.0, 0.0, 1.0, 0.0]

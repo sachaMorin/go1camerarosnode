@@ -1,0 +1,7 @@
+<!---->
+<launch>
+    <node pkg="unitree_camera" type="rect_image_node" respawn="false" name="camRI1" output="screen">
+        <param name="config_file" type="string" value="$(find unitree_camera)/config/stereo_camera_config.yaml"/>
+        <param name="info_url"    type="string" value="file://$(find unitree_camera)/config/unitree_camera.yaml"/>
+    </node>
+</launch>

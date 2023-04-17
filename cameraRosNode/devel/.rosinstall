@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/unitree/Unitree/autostart/camerarosnode/cameraRosNode/devel/setup.sh

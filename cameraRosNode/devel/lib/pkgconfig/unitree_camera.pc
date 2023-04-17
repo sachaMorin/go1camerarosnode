@@ -1,0 +1,8 @@
+prefix=/home/unitree/Unitree/autostart/camerarosnode/cameraRosNode/devel
+
+Name: unitree_camera
+Description: Description of unitree_camera
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy std_msgs

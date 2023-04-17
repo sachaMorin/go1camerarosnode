@@ -1,0 +1,6 @@
+<!---->
+<launch>
+    <node pkg="unitree_camera" type="point_cloud_node" respawn="false" name="camPC1" output="screen">
+        <param name="config_file" type="string" value="$(find unitree_camera)/config/stereo_camera_config.yaml"/>
+    </node>
+</launch>
