@@ -48,17 +48,21 @@ int main(int argc, char *argv[])
     // Loop and publish images to ROS topics
     while (cam.isOpened() && ros::ok())
     {
-        cv::Mat frame;
+        cv::Mat left, right, temp;
 	std::chrono::microseconds t;
-        if (!cam.getRawFrame(frame, t))
-        {
+//        if (!cam.getRawFrame(frame, t))
+//        {
+//            usleep(1000);
+//            continue;
+//        }
+        if(!cam.getRectStereoFrame(left,right,temp)){ ///< get rectify left,right frame
             usleep(1000);
             continue;
         }
 
         // Create ROS Image messages using cv_bridge
-        sensor_msgs::ImagePtr left_msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", frame).toImageMsg();
-        sensor_msgs::ImagePtr right_msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", frame).toImageMsg();
+        sensor_msgs::ImagePtr left_msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", right).toImageMsg();
+//        sensor_msgs::ImagePtr right_msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", frame).toImageMsg();
 
         // Publish images
         right_pub.publish(left_msg);
